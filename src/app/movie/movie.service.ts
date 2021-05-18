@@ -7,12 +7,12 @@ import { Genre } from './genre';
 
 @Injectable({providedIn:'root'})
 export class MovieService{
-  private apiserveUrl= '/api/v1/movies';
+  private apiserveUrl= environment.apiBaseUrl;
 
   constructor(private http:HttpClient){}
 
   public getMovies():Observable<Movie[]>{
-    return this.http.get<Movie[]>(`${this.apiserveUrl}/search/all?page=0&size=&sort=id,asc`);
+    return this.http.get<Movie[]>(`${this.apiserveUrl}/search/all`);
   }
 
   public getMoviesByMovieGenre(genre:Genre):Observable<Movie[]>{
