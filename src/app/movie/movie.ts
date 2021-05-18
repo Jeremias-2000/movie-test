@@ -1,3 +1,5 @@
+import { Genre } from "./genre";
+
 export interface Movie{
   id:number,
   name:string,
@@ -5,5 +7,5 @@ export interface Movie{
   description:string,
   moviesDirector:string,
   rating:number
-  movieGenre:string
+  movieGenre:Genre
 }
